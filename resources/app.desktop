@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Process Killer
+Comment=Show and force-kill the user applications using the most memory
+Type=Application
+Icon=com.github.radutomy.cosmic-process-applet
+Exec=cosmic-process-applet
+Terminal=false
+StartupNotify=true
+Categories=COSMIC;System;Monitor;
+Keywords=COSMIC;process;memory;kill;
+NoDisplay=true
+X-CosmicApplet=true
+X-CosmicHoverPopup=Auto

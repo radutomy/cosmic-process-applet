@@ -1,0 +1,35 @@
+[package]
+name = "cosmic-process-applet"
+version = "0.1.0"
+edition = "2024"
+license = "MPL-2.0"
+description = "A COSMIC applet for killing memory-hungry processes"
+repository = "https://github.com/radutomy/dotnix"
+
+[dependencies]
+humansize = "2"
+libc = "0.2"
+rustix = { version = "1.1", features = ["process"] }
+rust-embed = "8.11"
+tokio = { version = "1.52.0", features = ["rt", "time"] }
+sysinfo = { git = "https://github.com/jackpot51/sysinfo.git", branch = "redox-0.39" }
+zbus = "5"
+
+[target.'cfg(unix)'.dependencies]
+freedesktop-desktop-entry = "0.8"
+
+[dependencies.i18n-embed]
+version = "0.16"
+features = ["fluent-system", "desktop-requester"]
+
+[dependencies.libcosmic]
+git = "https://github.com/pop-os/libcosmic.git"
+default-features = false
+features = [
+    "applet",
+    "applet-token",
+    "multi-window",
+    "tokio",
+    "wayland",
+    "winit",
+]
